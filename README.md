@@ -34,11 +34,11 @@ These instructions result in the various build folders being installed on the de
 
 1. Obtain the SVN source code:
 
-Create a folder on your desktop called 'build'.
+	Create a folder on your desktop called 'build'.
 
-Download the SVN source above, in a zip file. Extract the contents to a folder, and rename the folder to 'dosbox'.
+	Download the SVN source above, in a zip file. Extract the contents to a folder, and rename the folder to 'dosbox'.
 
-Place the 'dosbox' folder in the 'build' folder.
+	Place the 'dosbox' folder in the 'build' folder.
 
 2. Obtain autoconf:
 
