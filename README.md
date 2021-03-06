@@ -24,7 +24,7 @@ _**A. Install DOSBox Dependencies**_
 	
 If you are using macOS 11 (Big Sur), you need this dependency as well:	
 
-		brew install svn
+			brew install svn
 
 Packages should install by default to: usr/local/Cellar
 
