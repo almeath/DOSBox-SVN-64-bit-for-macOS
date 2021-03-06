@@ -1,6 +1,6 @@
 **How to build DOSBox SVN (64-bit) in macOS**
 
-(These instructions assume you are familiar with using the Terminal)
+_- These instructions assume you are familiar with using the Terminal_
 
 _**A. Install DOSBox Dependencies**_
 
@@ -30,9 +30,9 @@ _Packages should install by default to usr/local/Cellar_
 
 _**B. Prepare the build folders**_
 
-- These instructions result in the various build folders being installed on the desktop
+_- These instructions result in the various build folders being installed on the desktop
 - DOSBox working folder is 'build'
-- SDL working folder is 'staticbuild'
+- SDL working folder is 'staticbuild'_
 
 1. Obtain the SVN source code
 
