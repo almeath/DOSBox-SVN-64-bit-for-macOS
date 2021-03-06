@@ -224,6 +224,22 @@ static INLINE Bit16u DOS_PackDate(Bit16u year,Bit16u mon,Bit16u day) {
 	return ((year-1980)&0x7f)<<9 | (mon&0x3f) << 5 | (day&0x1f);
 }
 
+/* fopen64, ftello64, fseeko64 */
+#if defined(__APPLE__)
+ #define fopen64 fopen
+ #define ftello64 ftell
+ #define fseeko64 fseek
+#elif defined (_MSC_VER)
+ #define fopen64 fopen
+ #if (_MSC_VER >= 1400)
+  #define ftello64 _ftelli64
+  #define fseeko64 _fseeki64
+ #else
+  #define ftello64 ftell
+  #define fseeko64 fseek
+ #endif
+#endif
+
 /* Dos Error Codes */
 #define DOSERR_NONE 0
 #define DOSERR_FUNCTION_NUMBER_INVALID 1
