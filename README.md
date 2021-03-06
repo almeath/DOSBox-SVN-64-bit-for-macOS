@@ -4,15 +4,15 @@ These instructions assume you are familiar with using the Terminal.
 
 This build includes the following patches:
 
-	Munt - for MT-32/CM-32L emulation
+- Munt - for MT-32/CM-32L emulation
 	
-	Glide - ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
+- Glide - ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
 	
-	Nuked OPL3 - emulates the Yamaha YMF262/CT1747
+- Nuked OPL3 - emulates the Yamaha YMF262/CT1747
 	
-	Memory - increases memory limit to 384mb for use with Windows9x.
+- Memory - increases memory limit to 384mb for use with Windows9x.
 	
-	Large HD - increases hard drive image size limit (seems to work reliable up to 8GB)
+- Large HD - increases hard drive image size limit (seems to work reliable up to 8GB)
 
 _**A. Install DOSBox Dependencies**_
 
