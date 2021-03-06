@@ -6,7 +6,7 @@ _**A. Install DOSBox Dependencies**_
 
 1. Install Xcode command line tools:
 
-	xcode-select --install
+		xcode-select --install
 
 2. Install Homebrew
 
@@ -14,17 +14,17 @@ _**A. Install DOSBox Dependencies**_
 
 3. Install dependencies with Homebrew:
 
-	brew install libpng
+		brew install libpng
 
-	brew install lzlib
+		brew install lzlib
 
-	brew install sdl_net
+		brew install sdl_net
 
-	brew install sdl_sound
+		brew install sdl_sound
 	
 If you are using macOS 11 (Big Sur), you need this dependency as well:	
 
-	brew install svn
+		brew install svn
 
 _Packages should install by default to usr/local/Cellar_
 
