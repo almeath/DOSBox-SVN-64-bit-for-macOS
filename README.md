@@ -89,7 +89,6 @@ This results in a folder called 'staticbuild' on your desktop.
 _**C. Build DOSBox**_
 
 	cd $HOME/Desktop/build/dosbox/
-	DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
 	./autogen.sh
 	./configure --with-sdl-prefix=$HOME/Desktop/staticbuild/
 	make 
