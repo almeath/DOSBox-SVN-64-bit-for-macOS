@@ -34,11 +34,11 @@ These instructions result in the various build folders being installed on the de
 
 1. Obtain the SVN source code:
 
-		cd $HOME/Desktop
-		mkdir build
-		cd build
-		svn checkout https://github.com/almeath/DOSBox-SVN-64-bit-for-macOS
-		cd DOSBox-SVN-64-bit-for-macOS
+Create a folder on your desktop called 'build'.
+
+Download the SVN source above, in a zip file. Extract the contents to a folder, and rename the folder to 'dosbox'.
+
+Place the 'dosbox' folder in the 'build' folder.
 
 2. Obtain autoconf:
 
@@ -76,7 +76,7 @@ This results in a folder called 'staticbuild' on your desktop.
 
 _**C. Build DOSBox**_
 
-	cd $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
+	cd $HOME/Desktop/build/dosbox/
 	DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
 	./autogen.sh
 	./configure --with-sdl-prefix=$HOME/Desktop/staticbuild/
