@@ -31,8 +31,10 @@ _Packages should install by default to usr/local/Cellar_
 _**B. Prepare the build folders**_
 
 _- These instructions result in the various build folders being installed on the desktop
-- DOSBox working folder is 'build'
-- SDL working folder is 'staticbuild'_
+
+_- DOSBox working folder is 'build'_
+
+_- SDL working folder is 'staticbuild'
 
 1. Obtain the SVN source code
 
