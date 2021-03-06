@@ -1,12 +1,16 @@
-**A. Install DOSBox Dependencies**
+**How to build DOSBox SVN (64-bit) in macOS**
 
-1. Install Xcode command line tools
+(These instructions assume you are familiar with using the Terminal)
+
+_**A. Install DOSBox Dependencies**_
+
+1. Install Xcode command line tools:
 
 	xcode-select --install
 
 2. Install Homebrew
 
-https://docs.brew.sh/Installation
+	https://docs.brew.sh/Installation
 
 3. Install dependencies with Homebrew:
 
@@ -17,10 +21,14 @@ https://docs.brew.sh/Installation
 	brew install sdl_net
 
 	brew install sdl_sound
+	
+If you are using macOS 11 (Big Sur), you need this dependency as well:	
+
+	brew install svn
 
 _Packages should install by default to usr/local/Cellar_
 
-**B. Prepare the build folders**
+_**B. Prepare the build folders**_
 
 - These instructions result in the various build folders being installed on the desktop
 - DOSBox working folder is 'build'
@@ -69,7 +77,7 @@ $ make install
 
 - Results in a folder called 'staticbuild' on your desktop
 
-**C. Build DOSBox**
+_**C. Build DOSBox**_
 
 $ cd $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
 $ DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
