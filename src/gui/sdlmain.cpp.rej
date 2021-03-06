@@ -1,0 +1,10 @@
+--- src/gui/sdlmain.cpp	2017-10-10 16:40:44.924658343 +0200
++++ src/gui/sdlmain.cpp	2018-01-11 15:11:29.584499628 +0100
+@@ -49,6 +49,7 @@
+ #include "cpu.h"
+ #include "cross.h"
+ #include "control.h"
++#include "glidedef.h"
+ 
+ #define MAPPERFILE "mapper-" VERSION ".map"
+ //#define DISABLE_JOYSTICK
