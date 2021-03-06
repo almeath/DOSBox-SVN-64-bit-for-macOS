@@ -1,6 +1,6 @@
 **How to build DOSBox SVN (64-bit) in macOS**
 
-_- These instructions assume you are familiar with using the Terminal_
+These instructions assume you are familiar with using the Terminal.
 
 _**A. Install DOSBox Dependencies**_
 
@@ -8,7 +8,7 @@ _**A. Install DOSBox Dependencies**_
 
 		xcode-select --install
 
-2. Install Homebrew
+2. Install Homebrew:
 
 	https://docs.brew.sh/Installation
 
@@ -26,65 +26,60 @@ If you are using macOS 11 (Big Sur), you need this dependency as well:
 
 		brew install svn
 
-_Packages should install by default to usr/local/Cellar_
+Packages should install by default to: usr/local/Cellar
 
 _**B. Prepare the build folders**_
 
-_- These instructions result in the various build folders being installed on the desktop
+These instructions result in the various build folders being installed on the desktop. The DOSBox working folder is 'build'. The SDL working folder is 'staticbuild'.
 
-_- DOSBox working folder is 'build'_
+1. Obtain the SVN source code:
 
-_- SDL working folder is 'staticbuild'
+		cd $HOME/Desktop
+		mkdir build
+		cd build
+		svn checkout https://github.com/almeath/DOSBox-SVN-64-bit-for-macOS
+		cd DOSBox-SVN-64-bit-for-macOS
 
-1. Obtain the SVN source code
+2. Obtain autoconf:
 
-$ cd $HOME/Desktop
-$ mkdir build
-$ cd build
-$ svn checkout https://github.com/almeath/DOSBox-SVN-64-bit-for-macOS
-$ cd DOSBox-SVN-64-bit-for-macOS
+		cd $HOME/Desktop/build
+		curl -LOs http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+		tar xzpf autoconf-2.69.tar.gz
+		cd autoconf-2.69
+		./configure
+		make
+		sudo make install
 
-2. Obtain autoconf
+3. Obtain automake:
 
-$ cd $HOME/Desktop/build
-$ curl -LOs http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
-$ tar xzpf autoconf-2.69.tar.gz
-$ cd autoconf-2.69
-$ ./configure
-$ make
-$ sudo make install
-
-3. Obtain automake
-
-$ cd $HOME/Desktop/build
-$ curl -LOs http://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
-$ tar xzpf automake-1.15.tar.gz
-$ cd automake-1.15
-$ ./configure
-$ make
-$ sudo make install
+		cd $HOME/Desktop/build
+		curl -LOs http://ftp.gnu.org/gnu/automake/automake-1.15.tar.gz
+		tar xzpf automake-1.15.tar.gz
+		cd automake-1.15
+		./configure
+		make
+		sudo make install
 
 4. Download SDL 1.2x (Mercurial)
 
-https://hg.libsdl.org/SDL/file/ab7529cb9558
+	https://hg.libsdl.org/SDL/file/ab7529cb9558
 
-- Download from 'zip' link at the top of the page
-- Unzip the folder to the desktop and rename it to SDL
+Download from source in a 'zip' file. Unzip the folder to the desktop and rename it to SDL.
 
-$ cd $HOME/Desktop/SDL
-$ ./configure --prefix=$HOME/Desktop/staticbuild --enable-static --disable-shared --disable-video-x11
-$ perl -p -i -e "/CGDirectPaletteRef palette;/d" ./src/video/quartz/SDL_QuartzVideo.h
-$ make
-$ make install
+	cd $HOME/Desktop/SDL
+	./configure --prefix=$HOME/Desktop/staticbuild --enable-static --disable-shared --disable-video-x11
+	perl -p -i -e "/CGDirectPaletteRef palette;/d" ./src/video/quartz/SDL_QuartzVideo.h
+	make
+	make install
 
-- Results in a folder called 'staticbuild' on your desktop
+This results in a folder called 'staticbuild' on your desktop.
 
 _**C. Build DOSBox**_
 
-$ cd $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
-$ DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
-$ ./autogen.sh
-$ ./configure --with-sdl-prefix=$HOME/Desktop/staticbuild/
+	cd $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
+	DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
+	./autogen.sh
+	./configure --with-sdl-prefix=$HOME/Desktop/staticbuild/
 
 D. Patch Make files to ensure a static build
 
@@ -93,17 +88,17 @@ D. Patch Make files to ensure a static build
 	•	The Makefile is located in $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
 	•	Open it in Xcode and edit at Line 241 (starts with LIBS =):
 
-LIBS =  -L/Users/yourusername/Desktop/staticbuild/lib /Users/yourusername/Desktop/staticbuild/lib/libSDLmain.a /Users/yourusername/Desktop/staticbuild/lib/libSDL.a -Wl,-framework,OpenGL -Wl,-framework,Cocoa -Wl,-framework,ApplicationServices -Wl,-framework,Carbon -Wl,-framework,AudioToolbox -Wl,-framework,AudioUnit -Wl,-framework,IOKit -framework CoreMIDI /usr/local/Cellar/libpng/1.6.37/lib/libpng.a /usr/local/Cellar/zlib/1.2.11/lib/libz.a /usr/local/Cellar/sdl_net/1.2.8/lib/libSDL_net.a /usr/local/Cellar/sdl_sound/1.0.3_1/lib/libSDL_sound.a /usr/local/Cellar/libogg/1.3.4/lib/libogg.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbis.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbisfile.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbisenc.a
+		LIBS =  -L/Users/**yourusername**/Desktop/staticbuild/lib /Users/**yourusername**/Desktop/staticbuild/lib/libSDLmain.a /Users/**yourusername**/Desktop/staticbuild/lib/libSDL.a -Wl,-framework,OpenGL -Wl,-framework,Cocoa -Wl,-framework,ApplicationServices -Wl,-framework,Carbon -Wl,-framework,AudioToolbox -Wl,-framework,AudioUnit -Wl,-framework,IOKit -framework CoreMIDI /usr/local/Cellar/libpng/1.6.37/lib/libpng.a /usr/local/Cellar/zlib/1.2.11/lib/libz.a /usr/local/Cellar/sdl_net/1.2.8/lib/libSDL_net.a /usr/local/Cellar/sdl_sound/1.0.3_1/lib/libSDL_sound.a /usr/local/Cellar/libogg/1.3.4/lib/libogg.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbis.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbisfile.a /usr/local/Cellar/libvorbis/1.3.7/lib/libvorbisenc.a
 
-- "Your username" will be substituted with your 
-- Check the path to each dependency to make sure it exactly matches what is in your user/local folder
-- This presumes you installed dependencies to their default locations with homebrew (otherwise edit accordingly)
-- The version numbers above may vary depending on when you installed the dependencies
-- Check that line starting with "SDL_LIBS =" reads as follows:
+"Your username" will be your macOS username
+Check the path to each dependency to make sure it exactly matches what is in your user/local folder
+This presumes you installed dependencies to their default locations with homebrew (otherwise edit accordingly)
+The version numbers above may vary depending on when you installed the dependencies
+Check that line starting with "SDL_LIBS =" reads as follows:
 
-SDL_LIBS = -L/Users/yourusername/Desktop/staticbuild/lib /Users/yourusername/Desktop/staticbuild/lib/libSDLmain.a /Users/yourusername/Desktop/staticbuild/lib/libSDL.a -Wl,-framework,OpenGL -Wl,-framework,Cocoa -Wl,-framework,ApplicationServices -Wl,-framework,Carbon -Wl,-framework,AudioToolbox -Wl,-framework,AudioUnit -Wl,-framework,IOKit
+	SDL_LIBS = -L/Users/**yourusername**/Desktop/staticbuild/lib /Users/**yourusername**/Desktop/staticbuild/lib/libSDLmain.a 	/Users/yourusername/Desktop/staticbuild/lib/libSDL.a -Wl,-framework,OpenGL -Wl,-framework,Cocoa -Wl,-framework,ApplicationServices -Wl,-framework,Carbon -Wl,-framework,AudioToolbox -Wl,-framework,AudioUnit -Wl,-framework,IOKit
 
-- As above, your username will be substituted in the highlights
+As above, your username will be substituted in the highlights with your own macOS username.
 
 2. Patch the SRC Makefile
 
