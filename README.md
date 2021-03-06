@@ -1,8 +1,8 @@
-A. Install DOSBox Dependencies
+**A. Install DOSBox Dependencies**
 
 1. Install Xcode command line tools
 
-$ xcode-select --install
+<xcode-select --install>
 
 2. Install Homebrew
 
@@ -21,7 +21,7 @@ $ brew install sdl_sound
 
 - Packages should install by default to usr/local/Cellar
 
-B. Prepare DOSBox SVN build folders
+**B. Prepare the build folders**
 
 - These instructions result in the various build folders being installed on the desktop
 - DOSBox working folder is 'build'
@@ -70,7 +70,7 @@ $ make install
 
 - Results in a folder called 'staticbuild' on your desktop
 
-C. Configure DOSBox SVN
+**C. Build DOSBox**
 
 $ cd $HOME/Desktop/build/DOSBox-SVN-64-bit-for-macOS/
 $ DOSBOXVERSION=$(svn log | head -2 | awk '/^r/ { print $1 }')
