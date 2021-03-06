@@ -2,11 +2,7 @@
 
 1. Install Xcode command line tools
 
-xcode-select --install
-
-$ brew install sdl_sound
-
-	Packages should install by default to usr/local/Cellar
+	xcode-select --install
 
 2. Install Homebrew
 
