@@ -2,7 +2,7 @@
 
 1. Install Xcode command line tools
 
-	xcode-select --install
+xcode-select --install
 
 2. Install Homebrew
 
@@ -10,13 +10,15 @@ https://docs.brew.sh/Installation
 
 3. Install dependencies with Homebrew:
 
-brew install cmake 
 brew install libpng
+
 brew install lzlib
+
 brew install sdl_net
+
 brew install sdl_sound
 
-- Packages should install by default to usr/local/Cellar
+_Packages should install by default to usr/local/Cellar_
 
 **B. Prepare the build folders**
 
