@@ -2,7 +2,7 @@
 
 1. Install Xcode command line tools
 
-<xcode-select --install>
+	•	xcode-select --install
 
 2. Install Homebrew
 
