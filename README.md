@@ -87,6 +87,9 @@ For a faster build, you can use 4 threads with the following command:
 		make -j4
 
 The DOSBox binary should successfully build and be located in $HOME/Desktop/build/dosbox-code-0/src
-• The resulting binary can then replace the one inside a standard DOSBox 0.74 application bundle (under /Contents/MacOS)
-• You can edit /Contents/Info.plist to change the app name, copyright etc.
-• Running the application should then generate a separate "DOSBox SVN Preferences" in the $HOME/Library/Preferences folder
+
+The resulting binary can then replace the one inside a standard DOSBox 0.74 application bundle (under /Contents/MacOS)
+
+You can edit /Contents/Info.plist to change the app name, copyright etc.
+
+Running the application should then generate a separate "DOSBox SVN Preferences" in the $HOME/Library/Preferences folder
