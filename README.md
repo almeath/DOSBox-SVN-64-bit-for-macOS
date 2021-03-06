@@ -10,14 +10,11 @@ https://docs.brew.sh/Installation
 
 3. Install dependencies with Homebrew:
 
-$ brew install cmake 
-$ brew install libpng
-
-$ brew install lzlib
-
-$ brew install sdl_net
-
-$ brew install sdl_sound
+brew install cmake 
+brew install libpng
+brew install lzlib
+brew install sdl_net
+brew install sdl_sound
 
 - Packages should install by default to usr/local/Cellar
 
