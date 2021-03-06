@@ -6,7 +6,7 @@ xcode-select --install
 
 $ brew install sdl_sound
 
-	•	Packages should install by default to usr/local/Cellar
+	Packages should install by default to usr/local/Cellar
 
 2. Install Homebrew
 
