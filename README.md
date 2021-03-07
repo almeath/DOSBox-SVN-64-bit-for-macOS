@@ -147,9 +147,11 @@ mt32.reverb.level=3
 - The ROM files for either the MT-32 or CM-32L must be named as follows:
 
 MT32_CONTROL.ROM
+
 MT32_PCM.ROM
 
 or
 
 CM32L_CONTROL.ROM
+
 CM32L_PCM.ROM
