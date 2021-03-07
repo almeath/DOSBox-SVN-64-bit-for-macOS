@@ -1,6 +1,6 @@
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
-Fort those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
+For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
 https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
 
