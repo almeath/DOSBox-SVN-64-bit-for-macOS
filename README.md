@@ -1,4 +1,4 @@
-If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.
+**If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
 Fort those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
@@ -23,6 +23,7 @@ https://github.com/almeath/openglide
 It is already included in this wrapper, configured with 'optimal' settings (as far as I can tell). I have tested this in a few games, but please note that OpenGlide has many bugs and issues and it is not a perfect solution. Unfortunately, it is the _only_ solution currently available on macOS.
 
 _If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_****
+
 
 
 **How to build DOSBox SVN (64-bit) in macOS**
