@@ -15,7 +15,7 @@ https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
 - I have increased all audio rates to 49716 as this apparently provides the best quality audio on Mac hardware
 - Unforunately, I cannot provide the MT-32 and CM32-L roms within the package, due to copyright issues, but the prefrences are pointing to the roms directory, ready for you to put your roms in there. Scroll down to the end of the instructions below for more information on using Munt.
 - Gravis Ultrasound with pro patches is included (look on the C drive for ultrasnd/mididemo.exe for an awesome sound demo)
-- I will periodically update the source code to stay in line with latest SVN - if you build the binary with the instructions below, you can just drop it into /Contents/Resources/dosbox and the wrapper should continue to work normally
+- I will periodically update the source code to stay in line with latest SVN - if you build the binary with the instructions below, you can just drop it into /Contents/Resources/dosbox and the wrapper should continue to work normally (note however, that the instructions below do not yet cover static builds, as it is more complicated)
 - For more information on OpenGlide (i.e. 3dfx passthrough), I have patched and forked it, with full compilation instrutions:
 
 https://github.com/almeath/openglide
