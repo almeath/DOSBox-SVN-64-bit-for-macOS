@@ -104,3 +104,37 @@ The resulting binary can then replace the one inside a standard DOSBox 0.74 appl
 You can edit /Contents/Info.plist to change the app name, copyright etc.
 
 Running the application should then generate a separate "DOSBox SVN Preferences" in the $HOME/Library/Preferences folder
+
+**Configuring Munt**
+
+Open your DOSBox SVN Preferences ($HOME/Library/Preferences/DOSBox SVN Preferences)
+
+These are the default settings to enable the Munt emulator functionality:
+
+[midi]
+mpu401=intelligent
+mididevice=mt32
+midiconfig=
+mt32.romdir=
+mt32.reverse.stereo=false
+mt32.verbose=false
+mt32.thread=false
+mt32.chunk=16
+mt32.prebuffer=32
+mt32.partials=32
+mt32.dac=0
+mt32.analog=2
+mt32.reverb.mode=auto
+mt32.reverb.time=5
+mt32.reverb.level=3
+
+- Specify an absolute path to the ROM files next to mt32.romdir=
+- The ROM files for either the MT-32 or CM-32L must be named as follows:
+
+MT32_CONTROL.ROM
+MT32_PCM.ROM
+
+or
+
+CM32L_CONTROL.ROM
+CM32L_PCM.ROM
