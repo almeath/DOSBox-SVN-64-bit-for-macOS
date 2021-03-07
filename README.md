@@ -1,3 +1,30 @@
+If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.
+
+Fort those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
+
+https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
+
+- the wrapper is entirely self-contained and can be transported between different Macs (it is a static binary with no external library dependencies). I have tested it on Mojave, Catalina and Big Sur on a range of iMacs and MacBooks going back to 2013 vintage. It may work fine in High Sierra and earlier, but I cannot guarantee it. It is based on SDL1 so that should ensure maximum backwards compatibility.
+- the wrapper structure should be self-explanatory if you check the contents of /Contents/Resources and read the dosbox_launch.conf and dosbox_settings.conf files
+- shaders are included and it is enabled with lottes_fast_tweaked by default
+- your C drive is "hardisk"
+- ISOs and CD images go in "media" (see the dosbox_launch.conf for suggested mounting commands - i.e. remove the # before the one you want)
+- you can edit /Contents/Info.plist where marked (i.e. game title, copyright date etc.)
+- the entire package is already codesigned by me, but in macOS Catalina and Big Sur you may have to enable DOSBox to run without restrictions from the macOS Security and Privacy preference pane
+- you get best results by setting fullresolution= to your desktop native resolution (i.e. 1920x1080, 2560x1440, 5120x2880 etc.) as the "desktop" setting makes things look a bit blurry on modern Macs with retina screens (I do not think the desktop setting is high-DPI aware, so it has to be forced)
+- I have increased all audio rates to 49716 as this apparently provides the best quality audio on Mac hardware
+- Unforunately, I cannot provide the MT-32 and CM32-L roms within the package, due to copyright issues, but the prefrences are pointing to the roms directory, ready for you to put your roms in there. Scroll down to the end of the instructions below for more information on using Munt.
+- Gravis Ultrasound is included (try /ultrasnd/mididemo.exe for an awesome sound demo)
+- I will periodically update the source code to stay in line with latest SVN - if you build the binary with the instructions below, you can just drop it into /Contents/Resources/dosbox and the wrapper should continue to work normally
+- For more information on OpenGlide (i.e. 3dfx passthrough), I have patched and forked it, with full compilation instrutions:
+
+https://github.com/almeath/openglide
+
+It is already included in this wrapper, configured with 'optimal' settings (as far as I can tell). I have tested this in a few games, but please note that OpenGlide has many bugs and issues and it is not a perfect solution. Unfortunately, it is the _only_ solution currently available on macOS.
+
+_If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_****
+
+
 **How to build DOSBox SVN (64-bit) in macOS**
 
 These instructions assume you are familiar with using the Terminal.
