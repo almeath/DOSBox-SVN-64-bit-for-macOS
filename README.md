@@ -97,7 +97,7 @@ For a faster build, you can use 4 threads with the following command:
 
 		make -j4
 
-The DOSBox binary should successfully build and be located in $HOME/Desktop/build/dosbox-code-0/src
+The DOSBox binary should successfully build and be located in $HOME/Desktop/build/dosbox/src
 
 The resulting binary can then replace the one inside a standard DOSBox 0.74 application bundle (under /Contents/MacOS)
 
