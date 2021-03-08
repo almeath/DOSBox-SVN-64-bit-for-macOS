@@ -19,12 +19,14 @@
 
 #include "dosbox.h"
 #include "inout.h"
+#include "paging.h"
 #include "mem.h"
 #include "pci_bus.h"
 #include "setup.h"
 #include "debug.h"
 #include "callback.h"
 #include "regs.h"
+#include "voodoo.h"
 
 
 #if defined(PCI_FUNCTIONALITY_ENABLED)
@@ -416,6 +418,34 @@ public:
 };
 
 static PCI* pci_interface=NULL;
+
+void PCI_AddSST_Device(Bitu type) {
+	Bitu ctype = 1;
+	switch (type) {
+		case 1:
+		case 2:
+			ctype = type;
+			break;
+		default:
+			LOG_MSG("PCI:SST: Invalid board type %x specified",type);
+			break;
+	}
+	PCI_Device* voodoo_dev=new PCI_SSTDevice(ctype);
+	if (pci_interface!=NULL) {
+		pci_interface->RegisterPCIDevice(voodoo_dev);
+	} else {
+		if (num_rqueued_devices<max_rqueued_devices)
+			rqueued_devices[num_rqueued_devices++]=voodoo_dev;
+	}
+}
+
+void PCI_RemoveSST_Device(void) {
+	if (pci_interface!=NULL) {
+		Bit16u vendor=PCI_SSTDevice::VendorID();
+		pci_interface->RemoveDevice(vendor,1);
+		pci_interface->RemoveDevice(vendor,2);
+	}
+}
 
 
 PhysPt PCI_GetPModeInterface(void) {
