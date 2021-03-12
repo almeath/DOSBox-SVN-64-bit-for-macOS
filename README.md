@@ -28,6 +28,8 @@ https://github.com/almeath/openglide
 
 It is already included in this wrapper, configured with 'optimal' settings (as far as I can tell). I have tested this in a few games, but please note that OpenGlide has many bugs and issues and it is not a perfect solution. Unfortunately, it is the _only_ solution currently available on macOS.
 
+*Important note: there is currently an issue with the OpenGlide source code that is preventing it from looking inside my application wrapper for the necessary SDL dylib, even though it correctly installed via dyblib bundler. This means that OpenGlide will only function if you have already installed it at the system level in macOS. To do this, go to my fork of OpenGlide under my Github account and follow the build instructions there. It only takes 5 minutes or so and then you do not have to worry about it again. I haves tested the build process on Mojave, Catalina and Big Sur. When the source code issue has been resolved I will update my download link.
+
 _If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_
 
 
