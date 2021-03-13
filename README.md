@@ -18,11 +18,17 @@ https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
 - I will periodically update the source code to stay in line with latest SVN - if you build the binary with the instructions below, you can just drop it into /Contents/Resources/dosbox and the wrapper should continue to work normally (note however, that the instructions below do not yet cover static builds, as it is more complicated)
 - As mentioned below, this build includes support for up to 384MB of RAM when using Windows 95 or 98, but remember that you should not set the memory any higher than 63MB in a DOS environment
 - Large hard disk images are supported, for when you create .img drives for use with Windows 95 and 98. I have tested up to 8GB and from what I read it is not recommended to go any higher and it may in fact not work at all if you do. Img file creation is a whole other subject of its own. There are ample guides on the web if you search for it, but if you want some help please post an issue and I will provide what information I have. I have successfully built wrappers with Windows 3.11, Windows 95B and Windows 98SE.
+- 3dfx Voodoo emulation support is included. If installing Windows 9x, you can find drivers and instructions here:
+
+http://dosbox95.darktraveler.com/important.html
+
 - For more information on OpenGlide (i.e. 3dfx passthrough), I have patched and forked it, with full compilation instructions:
 
 https://github.com/almeath/openglide
 
 It is already included in this wrapper, configured with 'optimal' settings (as far as I can tell). I have tested this in a few games, but please note that OpenGlide has many bugs and issues and it is not a perfect solution. Unfortunately, it is the _only_ solution currently available on macOS.
+
+I have included the "glide2x.ovl" file inside the C drive. It needs to be placed inside the game directory of any DOS glide-compatible game, if necessary replacing the one that comes bundled with the game. I have tested it successfully with Lands of Lore 2 (1.30 patch) in DOS.
 
 _If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_
 
@@ -37,6 +43,8 @@ This build includes the following patches:
 - Munt - for MT-32/CM-32L emulation
 	
 - Glide - ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
+
+- 3dfx Voodoo - software emulation of the 3dfx Voodoo graphics card
 	
 - Nuked OPL3 - emulates the Yamaha YMF262/CT1747
 	
