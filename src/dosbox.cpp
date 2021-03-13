@@ -132,6 +132,8 @@ Bit32u ticksScheduled;
 bool ticksLocked;
 void increaseticks();
 
+bool mono_cga=false;
+
 static Bitu Normal_Loop(void) {
 	Bits ret;
 	while (1) {
@@ -366,7 +368,8 @@ static void DOSBOX_RealInit(Section * sec) {
 	machine = MCH_VGA;
 	int10.vesa_nolfb = false;
 	int10.vesa_oldvbe = false;
-	if      (mtype == "cga")      { machine = MCH_CGA; }
+	if      (mtype == "cga")      { machine = MCH_CGA; mono_cga = false; }
+	else if (mtype == "cga_mono") { machine = MCH_CGA; mono_cga = true; }
 	else if (mtype == "tandy")    { machine = MCH_TANDY; }
 	else if (mtype == "pcjr")     { machine = MCH_PCJR; }
 	else if (mtype == "hercules") { machine = MCH_HERC; }
@@ -409,7 +412,7 @@ void DOSBOX_Init(void) {
 
 	/* Setup all the different modules making up DOSBox */
 	const char* machines[] = {
-		"hercules", "cga", "tandy", "pcjr", "ega",
+		"hercules", "cga", "cga_mono", "tandy", "pcjr", "ega",
 		"vgaonly", "svga_s3", "svga_et3000", "svga_et4000",
 		"svga_paradise", "vesa_nolfb", "vesa_oldvbe", 0 };
 	secprop=control->AddSection_prop("dosbox",&DOSBOX_RealInit);
