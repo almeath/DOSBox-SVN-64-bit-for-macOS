@@ -566,6 +566,10 @@ void DOSBOX_Init(void) {
 					  "  'max'           12MB card (4MB front buffer + 2x4MB texture units)");
 #endif
 
+   Pint = secprop->Add_int("fmstrength",Property::Changeable::WhenIdle,150);
+   Pint->SetMinMax(1,1000);
+   Pint->Set_help("Strength of the FM playback volume in percent, in relation to PCM playback volume. Default is 150.\n"
+	"Possible Values: 1 to 1000 (0.01x to 10x)");
 
 	secprop=control->AddSection_prop("mixer",&MIXER_Init);
 	Pbool = secprop->Add_bool("nosound",Property::Changeable::OnlyAtStart,false);
