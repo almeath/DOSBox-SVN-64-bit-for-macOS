@@ -1,4 +1,4 @@
-**This build includes the following patches:**
+**This build of DOSBox SVN (4441) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 	
