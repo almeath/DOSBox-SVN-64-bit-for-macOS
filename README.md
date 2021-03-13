@@ -1,3 +1,19 @@
+**This build includes the following patches:**
+
+- Munt : for MT-32/CM-32L emulation
+	
+- Glide : ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
+
+- 3dfx Voodoo : software emulation of the 3dfx Voodoo graphics card
+	
+- Nuked OPL3 : emulates the Yamaha YMF262/CT1747
+	
+- Memory : increases memory limit to 384mb for use with Windows 9x
+	
+- Large HD : increases hard drive image size limit (seems to work reliable up to 8GB), also useful for Windows 9x
+
+- CGA monochrome : machine type cga_mono is available, use F11 to cycle through amber, green, white, paper white
+
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
 For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
@@ -37,20 +53,6 @@ _If you have any questions or problems, please feel free to lodge an issue here 
 **How to build DOSBox SVN (64-bit) in macOS**
 
 These instructions assume you are familiar with using the Terminal.
-
-This build includes the following patches:
-
-- Munt - for MT-32/CM-32L emulation
-	
-- Glide - ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
-
-- 3dfx Voodoo - software emulation of the 3dfx Voodoo graphics card
-	
-- Nuked OPL3 - emulates the Yamaha YMF262/CT1747
-	
-- Memory - increases memory limit to 384mb for use with Windows 9x
-	
-- Large HD - increases hard drive image size limit (seems to work reliable up to 8GB), also useful for Windows 9x
 
 _**A. Install DOSBox Dependencies**_
 
