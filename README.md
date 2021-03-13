@@ -24,7 +24,8 @@ https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
 
 **Notes on usage:**
 
-- The wrapper is entirely self-contained and can be transported between different Macs (it is a static binary with no external library dependencies). I have tested it on Mojave, Catalina and Big Sur on a range of iMacs and MacBooks going back to 2013 vintage. It may work fine in High Sierra and earlier, but I cannot guarantee it. It is based on SDL1 so that should ensure maximum backwards compatibility.
+- The wrapper is entirely self-contained and can be transported between different Macs (it is a static binary with no external library dependencies). It is suited for use cases where you want to have each of your DOS games in an individual macOS application. It is not intended for those who prefer to run one instances of DOSBox with a shared configuration and your games located elsewhere on your system.
+- I have tested it on Mojave, Catalina and Big Sur on a range of iMacs and MacBooks going back to 2013 vintage. It may work fine in High Sierra and earlier, but I cannot guarantee it. It is based on SDL1 so that should ensure maximum backwards compatibility.
 - The wrapper structure should be self-explanatory if you check the contents of /Contents/Resources and read the "dosbox_launch.conf" and "dosbox_settings.conf" files
 - Shaders are included and it is enabled with lottes_fast_tweaked by default
 - Your C drive is "hardisk"
