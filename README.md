@@ -28,6 +28,8 @@ https://github.com/almeath/openglide
 
 It is already included in this wrapper, configured with 'optimal' settings (as far as I can tell). I have tested this in a few games, but please note that OpenGlide has many bugs and issues and it is not a perfect solution. Unfortunately, it is the _only_ solution currently available on macOS.
 
+I have included the "glide2x.ovl" file inside the C drive. It needs to be placed inside the game directory of any DOS glide-compatible game, if necessary replacing the one that comes bundled with the game. I have tested it successfully with Lands of Lore 2 (1.30 patch) in DOS.
+
 _If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_
 
 
