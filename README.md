@@ -14,11 +14,15 @@
 
 - CGA monochrome : machine type cga_mono is available, use F11 to cycle through amber, green, white, paper white
 
+
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
 For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
 https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
+
+
+**Notes on usage:**
 
 - The wrapper is entirely self-contained and can be transported between different Macs (it is a static binary with no external library dependencies). I have tested it on Mojave, Catalina and Big Sur on a range of iMacs and MacBooks going back to 2013 vintage. It may work fine in High Sierra and earlier, but I cannot guarantee it. It is based on SDL1 so that should ensure maximum backwards compatibility.
 - The wrapper structure should be self-explanatory if you check the contents of /Contents/Resources and read the "dosbox_launch.conf" and "dosbox_settings.conf" files
@@ -47,7 +51,6 @@ It is already included in this wrapper, configured with 'optimal' settings (as f
 I have included the "glide2x.ovl" file inside the C drive. It needs to be placed inside the game directory of any DOS glide-compatible game, if necessary replacing the one that comes bundled with the game. I have tested it successfully with Lands of Lore 2 (1.30 patch) in DOS.
 
 _If you have any questions or problems, please feel free to lodge an issue here and I will do my best to help. Have fun!_
-
 
 
 **How to build DOSBox SVN (64-bit) in macOS**
