@@ -16,6 +16,8 @@
 
 - FM volume : volume of FM sound output can be adjusted in proportion to PCM playback 
 
+- Fluidsynth : Fluidsynth software MIDI synthesizer
+
 
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
