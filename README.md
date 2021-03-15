@@ -92,6 +92,7 @@ _**B. Build DOSBox**_
 
 Download the DOSBox source as a zip file and extract to the desktop. Rename the folder to dosbox.
 
+Run the following commands in the Terminal:
 
 	cd $HOME/dosbox
 	./autogen.sh
