@@ -1,4 +1,4 @@
-**This build of DOSBox SVN (4441) includes the following patches:**
+**This build of DOSBox SVN (4442) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 	
@@ -21,7 +21,7 @@
 
 For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
-https://www.dropbox.com/s/51ni2k0d2wlis4k/DOSBox%20SVN%204441%20wrapper.zip?dl=0
+https://www.dropbox.com/s/cvz6tckv9q3nqt9/DOSBox%20SVN%204442%20wrapper.zip?dl=0
 
 
 **Notes on usage:**
