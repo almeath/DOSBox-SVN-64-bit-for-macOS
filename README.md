@@ -20,6 +20,8 @@
 
 - 4mb vram : Increases video ram for emulated S3 video chip to 4mb (better performance in some games such as Duke Nukem 3D) 
 
+- PC speaker : patch to improve the authenticity of PC speaker emulation (can be enabled/disabled)
+
 
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
