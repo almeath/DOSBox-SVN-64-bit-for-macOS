@@ -48,6 +48,7 @@ static struct {
 	SPKR_MODES mode;
 	Bitu pit_mode;
 	Bitu rate;
+	Bitu type;
 
 	float pit_last;
 	float pit_new_max,pit_new_half;
@@ -167,7 +168,7 @@ void PCSPEAKER_SetCounter(Bitu cntr,Bitu mode) {
 		spkr.last_index=0;
 	}
 	spkr.last_ticks=PIC_Ticks;
-	float newindex=PIC_TickIndex();
+	float newindex=PIC_TickIndex();	
 	ForwardPIT(newindex);
 	switch (mode) {
 	case 0:		/* Mode 0 one shot, used with realsound */
@@ -198,6 +199,8 @@ void PCSPEAKER_SetCounter(Bitu cntr,Bitu mode) {
 			spkr.pit_mode=0;
 			return;
 		}
+        if (spkr.type == 1 && spkr.mode==SPKR_PIT_ON && cntr<10000)
+            spkr.pit_index=spkr.pit_max;
 		spkr.pit_new_max=(1000.0f/PIT_TICK_RATE)*cntr;
 		spkr.pit_new_half=spkr.pit_new_max/2;
 		break;
@@ -327,11 +330,15 @@ public:
 	PCSPEAKER(Section* configuration):Module_base(configuration){
 		spkr.chan=0;
 		Section_prop * section=static_cast<Section_prop *>(configuration);
-		if(!section->Get_bool("pcspeaker")) return;
+        if((strcmp(section->Get_string("pcspeaker"),"true") != 0) && (strcmp(section->Get_string("pcspeaker"),"exp") != 0)) return;
 		spkr.mode=SPKR_OFF;
 		spkr.last_ticks=0;
 		spkr.last_index=0;
 		spkr.rate=section->Get_int("pcrate");
+        if (strcmp(section->Get_string("pcspeaker"),"true") == 0)
+                spkr.type = 0;
+        if (strcmp(section->Get_string("pcspeaker"),"exp") == 0)
+                spkr.type = 1;
 		spkr.pit_mode=3;
 		spkr.pit_max=(1000.0f/PIT_TICK_RATE)*1320;
 		spkr.pit_half=spkr.pit_max/2;
@@ -345,7 +352,7 @@ public:
 	}
 	~PCSPEAKER(){
 		Section_prop * section=static_cast<Section_prop *>(m_configuration);
-		if(!section->Get_bool("pcspeaker")) return;
+		if(strcmp(section->Get_string("pcspeaker"),"true") != 0 && (strcmp(section->Get_string("pcspeaker"),"exp") != 0)) return;
 	}
 };
 static PCSPEAKER* test;
