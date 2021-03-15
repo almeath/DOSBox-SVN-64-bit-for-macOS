@@ -18,6 +18,8 @@
 
 - Fluidsynth : Fluidsynth software MIDI synthesizer
 
+- 4mb vram : Increases video ram for emulated S3 video chip to 4mb (better performance in some games such as Duke Nukem 3D) 
+
 
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
