@@ -20,12 +20,18 @@
 
 - 4mb vram : Increases video ram for emulated S3 video chip to 4mb (better performance in some games such as Duke Nukem 3D) 
 
+- PC speaker : patch to improve the authenticity of PC speaker emulation (can be enabled/disabled)
+
 
 **If you want to build your own copy of DOSBox SVN using this repository, please follow the instructions below.**
 
 For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
 https://www.dropbox.com/s/cvz6tckv9q3nqt9/DOSBox%20SVN%204442%20wrapper.zip?dl=0
+
+
+_VERY IMPORTANT: Due to macOS security features, when you download and unzip the app bundle, you need to move it to another location (i.e. into another folder) anywhere on your system, and then back to the original location, before you run it for the first time. This is because macOS places quarantine flags on downloaded apps. Once you do that, the app will run fine. Another option is to use the Terminal command xattr -cr on the app and that will manually strip the quarantine flags._
+
 
 
 **Notes on usage:**
