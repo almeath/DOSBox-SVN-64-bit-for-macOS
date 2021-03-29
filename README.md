@@ -1,4 +1,4 @@
-**This build of DOSBox SVN (4442) includes the following patches:**
+**This build of DOSBox SVN (4444) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 	
@@ -27,7 +27,7 @@
 
 For those unable or unwilling to compile directly, I can provide a pre-built application wrapper:
 
-https://www.dropbox.com/s/cvz6tckv9q3nqt9/DOSBox%20SVN%204442%20wrapper.zip?dl=0
+https://www.dropbox.com/s/id7o1ypgbe4o36l/DOSBox%20SVN%204444%20Wrapper.zip?dl=0
 
 
 _VERY IMPORTANT: Due to macOS security features, when you download and unzip the app bundle, you need to move it to another location (i.e. into another folder) anywhere on your system, and then back to the original location, before you run it for the first time. This is because macOS places quarantine flags on downloaded apps. Once you do that, the app will run fine. Another option is to use the Terminal command xattr -cr on the app and that will manually strip the quarantine flags._
