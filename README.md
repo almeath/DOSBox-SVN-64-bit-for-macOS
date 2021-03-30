@@ -2,7 +2,7 @@
 
 - Munt : for MT-32/CM-32L emulation
 	
-- Glide : ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide library on Github)
+- Glide : ready to use with the OpenGlide library for 3dfx graphics "pass-through" support (see my OpenGlide fork on Github)
 
 - 3dfx Voodoo : software emulation of the 3dfx Voodoo graphics card
 	
