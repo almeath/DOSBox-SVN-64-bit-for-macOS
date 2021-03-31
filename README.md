@@ -14,8 +14,6 @@
 
 - CGA monochrome : machine type cga_mono is available, use F11 to cycle through amber, green, white, paper white
 
-- FM volume : volume of FM sound output can be adjusted in proportion to PCM playback 
-
 - Fluidsynth : Fluidsynth software MIDI synthesizer
 
 - 4mb vram : Increases video ram for emulated S3 video chip to 4mb (better performance in some games such as Duke Nukem 3D) 
