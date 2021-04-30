@@ -64,7 +64,7 @@ Download the DOSBox source as a zip file and extract to the desktop. Rename the 
 
 Run the following commands in the Terminal:
 
-   cd $HOME/dosbox
+   cd $HOME/Desktop/dosbox
    ./autogen.sh
    ./configure
    make
@@ -73,7 +73,7 @@ For a faster build, you can use 4 threads with the following command:
 
        make -j4
 
-The DOSBox binary should successfully build and be located in $HOME/dosbox/src
+The DOSBox binary should successfully build and be located in $HOME/Desktop/dosbox/src
 
 The resulting binary can then replace the one inside a standard DOSBox 0.74 application bundle (under /Contents/MacOS)
 
