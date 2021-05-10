@@ -62,13 +62,13 @@ _**B. Install Munt**_
 
 Run the following commands in the Terminal:
 
-   git clone https://github.com/munt/munt.git
-   cd munt
-   mkdir build
-   cd build
-   cmake -Dmunt_WITH_MT32EMU_SMF2WAV=OFF -Dmunt_WITH_MT32EMU_QT=OFF -Dlibmt32emu_SHARED=0 ../
-   make
-   sudo make install
+       git clone https://github.com/munt/munt.git
+       cd munt
+       mkdir build
+       cd build
+       cmake -Dmunt_WITH_MT32EMU_SMF2WAV=OFF -Dmunt_WITH_MT32EMU_QT=OFF -Dlibmt32emu_SHARED=0 ../
+       make
+       sudo make install
 
 This will install the Munt static library to usr/lib/libmt32emu.a
 
