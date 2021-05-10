@@ -58,7 +58,23 @@ If you are using macOS 11 (Big Sur), you need this dependency as well:
 
 Packages should install by default to: usr/local/Cellar
 
-_**B. Build DOSBox**_
+_**B. Install Munt**_
+
+Run the following commands in the Terminal:
+
+   git clone https://github.com/munt/munt.git
+   cd munt
+   mkdir build
+   cd build
+   cmake -Dmunt_WITH_MT32EMU_SMF2WAV=OFF -Dmunt_WITH_MT32EMU_QT=OFF -Dlibmt32emu_SHARED=0 ../
+   make
+   sudo make install
+
+This will install the Munt static library to usr/lib/libmt32emu.a
+
+Munt source files should install to 'munt' folder in your home folder. This folder does not need to be retained after running the installation command.
+
+_**C. Build DOSBox**_
 
 Download the DOSBox source as a zip file and extract to the desktop. Rename the folder to dosbox.
 
