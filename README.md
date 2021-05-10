@@ -51,6 +51,8 @@ _**A. Install DOSBox Dependencies**_
        brew install sdl_net
 
        brew install sdl_sound
+       
+       brew install cmake
 
 If you are using macOS 11 (Big Sur), you need this dependency as well:    
 
