@@ -1,4 +1,4 @@
-**This macOS fork of DOSBox SVN (4450) includes the following patches:**
+**This macOS fork of DOSBox SVN (4459) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 
