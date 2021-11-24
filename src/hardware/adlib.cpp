@@ -27,8 +27,8 @@
 #include "mapper.h"
 #include "mem.h"
 #include "dbopl.h"
-#include "nukedopl.h"
 #include "cpu.h"
+#include "nukedopl.h"
 
 #include "mame/emu.h"
 #include "mame/fmopl.h"
@@ -168,38 +168,38 @@ struct Handler : public Adlib::Handler {
 
 namespace NukedOPL {
 struct Handler : public Adlib::Handler {
-    opl3_chip chip;
-    Bit8u newm;
-    virtual void WriteReg( Bit32u reg, Bit8u val ) {
-        OPL3_WriteRegBuffered(&chip, (Bit16u)reg, val);
-        if (reg == 0x105)
-            newm = reg & 0x01;
-    }
-    virtual Bit32u WriteAddr( Bit32u port, Bit8u val ) {
-        Bit16u addr;
-        addr = val;
-        if ((port & 2) && (addr == 0x05 || newm)) {
-            addr |= 0x100;
-        }
-        return addr;
-    }
-    virtual void Generate( MixerChannel* chan, Bitu samples ) {
-        Bit16s buf[1024*2];
-        while( samples > 0 ) {
-            Bitu todo = samples > 1024 ? 1024 : samples;
-            samples -= todo;
-            OPL3_GenerateStream(&chip, buf, todo);
-            chan->AddSamples_s16( todo, buf );
-        }
-    }
-    virtual void Init( Bitu rate ) {
-        newm = 0;
-        OPL3_Reset(&chip, rate);
-    }
-    ~Handler() {
-    }
+	opl3_chip chip;
+	Bit8u newm;
+	virtual void WriteReg( Bit32u reg, Bit8u val ) {
+		OPL3_WriteRegBuffered(&chip, (Bit16u)reg, val);
+		if (reg == 0x105)
+			newm = reg & 0x01;
+	}
+	virtual Bit32u WriteAddr( Bit32u port, Bit8u val ) {
+		Bit16u addr;
+		addr = val;
+		if ((port & 2) && (addr == 0x05 || newm)) {
+			addr |= 0x100;
+		}
+		return addr;
+	}
+	virtual void Generate( MixerChannel* chan, Bitu samples ) {
+		Bit16s buf[1024*2];
+		while( samples > 0 ) {
+			Bitu todo = samples > 1024 ? 1024 : samples;
+			samples -= todo;
+			OPL3_GenerateStream(&chip, buf, todo);
+			chan->AddSamples_s16( todo, buf );
+		}
+	}
+	virtual void Init( Bitu rate ) {
+		newm = 0;
+		OPL3_Reset(&chip, rate);
+	}
+	~Handler() {
+	}
 };
- 
+
 }
 
 
@@ -843,9 +843,7 @@ Module::Module( Section* configuration ) : Module_base(configuration) {
 	//Used to be 2.0, which was measured to be too high. Exact value depends on card/clone.
 	mixerChan->SetScale( 1.5f );  
 
-	if (oplemu == "fast") {
-		handler = new DBOPL::Handler();
-	} else if (oplemu == "compat") {
+	if (oplemu == "compat") {
 		if ( oplmode == OPL_opl2 ) {
 			handler = new OPL2::Handler();
 		} else {
@@ -859,11 +857,14 @@ Module::Module( Section* configuration ) : Module_base(configuration) {
 		else {
 			handler = new MAMEOPL3::Handler();
 		}
-    }
-    else if (oplemu == "nuked") {
-        handler = new NukedOPL::Handler();
-	} else {
-		handler = new DBOPL::Handler();
+	} 
+	else if (oplemu == "nuked") {
+		handler = new NukedOPL::Handler();
+	}
+	//Fall back to dbop, will also catch auto
+	else if (oplemu == "fast" || 1) {
+		const bool opl3Mode = oplmode >= OPL_opl3;
+		handler = new DBOPL::Handler( opl3Mode );
 	}
 	handler->Init( rate );
 	bool single = false;

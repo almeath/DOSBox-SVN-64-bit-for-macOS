@@ -320,7 +320,11 @@ public:
 #if defined(WIN32)
 	hdll = LoadLibrary("glide2x.dll");
 #elif defined(MACOSX)
-	hdll = dlopen("libglide2x.dylib", RTLD_NOW);
+	hdll = dlopen("@executable_path/libglide2x.dylib", RTLD_NOW);
+    if (!hdll)
+            hdll = dlopen("@executable_path/../libglide2x.dylib", RTLD_NOW);
+    if (!hdll)
+            hdll = dlopen("libglide2x.dylib", RTLD_NOW);
 #else
 	hdll = dlopen("libglide2x.so", RTLD_NOW);
 #endif
