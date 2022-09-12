@@ -631,10 +631,21 @@ int main(int argc,char * argv[]) {
 ])],AC_MSG_RESULT(yes);AC_DEFINE(C_SET_PRIORITY,1),AC_MSG_RESULT(no))
 
 
+AH_TEMPLATE(C_VOODOO,[Define to 1 to enable 3dfx voodoo support])
+AC_ARG_ENABLE(voodoo,AC_HELP_STRING([--disable-voodoo],[Disable 3dfx voodoo support]),,enable_voodoo=yes)
+AC_MSG_CHECKING(whether voodoo emulation will be enabled)
+if test x$enable_voodoo = xyes ; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(C_VOODOO,1)
+else
+  AC_MSG_RESULT(no)
+fi
+
+
 dnl Some target detection and actions for them
 case "$host" in
     *-*-cygwin* | *-*-mingw32*)
-       LIBS="$LIBS -lwinmm -lshlwapi"
+       LIBS="$LIBS -lwinmm"
        AC_DEFINE(C_DIRECTSERIAL, 1, [ Define to 1 if you want serial passthrough support (Win32, Posix and OS/2 only).])
        if test x$have_sdl_net_lib = xyes -a x$have_sdl_net_h = xyes ; then
          LIBS="$LIBS -lws2_32"
