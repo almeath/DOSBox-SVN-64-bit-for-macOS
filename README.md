@@ -23,7 +23,7 @@
 
 For those unable to compile directly, I can provide a pre-built version that contains both a 'standard' and an entirely 'self-contained' application bundle. Full instructions on how to use these apps are included in the DMG file.
 
-https://www.dropbox.com/s/aqhk8e42jmf13aw/DOSBox%20macOS%2064.dmg.zip?dl=0
+https://www.dropbox.com/s/nxc244t286nmsey/DOSBox%20macOS%2064.dmg.zip?dl=0
 
 
 **How to build DOSBox SVN (64-bit) in macOS**
