@@ -1,4 +1,4 @@
-**This macOS fork of DOSBox SVN 4481 (September 2022) includes the following patches:**
+**This macOS fork of DOSBox SVN 4482 (March 2023) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 
@@ -14,7 +14,7 @@
 
 - Fluidsynth : Fluidsynth software MIDI synthesizer
 
-- 4mb vram : Increases video ram for emulated S3 video chip to 4mb (better performance in some games such as Duke Nukem 3D) 
+- 8mb vram : Increases video ram for emulated S3 video chip to 8mb (better performance in some games such as Duke Nukem 3D) 
 
 - PC speaker : patch to improve the authenticity of PC speaker emulation (can be enabled/disabled)
 
@@ -52,7 +52,7 @@ _**A. Install DOSBox Dependencies**_
        
        brew install cmake
 
-If you are using macOS 11 (Big Sur), you need this dependency as well:    
+If you are using macOS 11 (Big Sur) or later, you need this dependency as well:    
 
        brew install svn
 
