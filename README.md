@@ -1,4 +1,4 @@
-**This macOS fork of DOSBox SVN 4482 (March 2023) includes the following patches:**
+**This macOS fork of DOSBox SVN 4484 (August 2024) includes the following patches:**
 
 - Munt : for MT-32/CM-32L emulation
 
